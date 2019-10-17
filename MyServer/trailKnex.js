@@ -5,8 +5,8 @@ function listAllTrailsKnex(req, res) {
         knex
     } = req.app.locals
     knex
-        .select('name','location','description','difficulty','length')
-        .from('trails')
+        .select('Name','Location','Description','Difficulty','Length')
+        .from('Trails')
 
         .then(data => res.status(200).json(data))
         .catch(error => res.status(500).json(error))
@@ -22,8 +22,8 @@ function listSingleTrail(req,res) {
         id
     } = req.params
     knex
-    .select('name','location','description','difficulty','length')
-    .from('trails')
+    .select('Name','Location','Description','Difficulty','Length')
+    .from('Trails')
     .where({
         id: `${id}`
     })
@@ -48,7 +48,7 @@ function UpdateTrail(req,res) {
         id
     } = req.params
     const payload = req.body
-    knex('trails')
+    knex('Trails')
     .where('id', id)
     .update(payload)
     .then(repsonse => {
@@ -68,7 +68,7 @@ function deleteTrail(req,res) {
     const {
         id
     } = req.params
-    knex('trails')
+    knex('Trails')
         .where('id', id)
         .del()
         .then(response => {
