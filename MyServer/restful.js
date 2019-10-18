@@ -1,15 +1,18 @@
 const express = require('express');
 const app = express()
-const router = xpress.Router()
 
+
+const router = express.Router()
 const config = require('./config')
-//const data = require('./data')
+const middleware = require('.middleware')
 
-//This is for the mysql driver
-const mysql = require('mysql')
 
-const connection = mysql.createConnection(config.database)
-const routes = require('./routes')
+//connection to database
+const knex = require('knex')({
+    client: 'mysql',
+    connection: config.database
+})
+
 
 // connection to database
 
