@@ -12,4 +12,6 @@ CREATE TABLE tblTrails (
 );
 
 INSERT INTO tblTrails (Location, Description, Difficulty, Length) 
-VALUES ('Test','A Description','Very Easy','1000');
+VALUES ('Test','A test description of a trail','Very Easy','1000');
+
+SELECT * FROM tblTrails;

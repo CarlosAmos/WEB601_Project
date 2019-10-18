@@ -39,6 +39,26 @@ function listSingleTrail(req,res) {
 }
 
 // Post code here
+function postTrail(req,res) {
+    const {
+        knex
+    } = req.app.locals
+
+    console.log(req.body)
+    const payload = req.body
+
+    const mandatoryColumns = []
+    const payloadKeys = Object.keys(payload)
+    const mandatoryColumns = mandatoryColumns.every(mc => payloadKeys.includes(mc))
+    if (mandatoryColumns) {
+        knex('Trails')
+            .insert(payload)
+            .then(response => res.status(201).json('Trail record created'))
+            .catch(error => res.status(500).json(error))
+    } else {
+        return res.status(400).json(`Mandatory columns are required ${mandatoryColumns}`);
+    }
+}
 
 function UpdateTrail(req,res) {
     const {
