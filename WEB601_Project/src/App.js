@@ -5,7 +5,8 @@ import {Trail} from './Pages/Trail';
 import {Map} from './Pages/Map';
 import {Planner} from './Pages/Planner';
 import {Events} from './Pages/Events';
-import {ManageTrails} from './Pages/ManageTrails';
+import {TrailManager} from './Pages/TrailManager/TrailManager';
+import {AddTrail} from './Pages/TrailManager/AddTrail';
 import { Layout } from './Components/Layout';
 import {NavBar } from './Components/NavBar';
 
@@ -24,7 +25,7 @@ componentDidMount(){
 }
 
 fetchData(){
-  
+
 }
 
   render() {
@@ -39,7 +40,9 @@ fetchData(){
             <Route path="/Map" component={Map} />
             <Route path="/Planner" component={Planner} />
             <Route path="/Events" component={Events} />
-            <Route path="/ManageTrails" component={ManageTrails} />
+            <Route path="/TrailManager/TrailManager" component={TrailManager} />
+            <Route path="/TrailManager/AddTrail" component={AddTrail} />
+
           </Switch>
         </Router>
         </Layout>

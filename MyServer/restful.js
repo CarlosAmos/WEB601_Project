@@ -7,6 +7,7 @@ const middlewares = require('./middlewares')
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
+
 //connection to database
 const knex = require('knex')({
     client: 'mysql',
