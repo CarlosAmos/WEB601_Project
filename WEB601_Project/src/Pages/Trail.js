@@ -23,7 +23,7 @@ export const Trail = () => (
     <div className="col-12">
     <Row height='150'>
         <div height='150px'>
-        <Button variant="outline-success">Success</Button>
+        <Button variant="outline-success">Add Trail</Button>
         </div>
         </Row>
         <Row className="justify-content-md-center" height='100'>
