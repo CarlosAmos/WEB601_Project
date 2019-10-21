@@ -1,57 +1,32 @@
-import React from 'react';
-//import styled from 'styled-components';
-//import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
+import React, {Component} from 'react';
 
-/*const Styles = styled.div`
-.description{
-    width: 50%;
-    height: 100;
-    position: absolute;
-    border: '4px solid black' ;
-}
+import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
 
-}
+export class AddTrail extends Component {
 
-`;*/
+  constructor(props) {
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this);
 
-export const AddTrail = () => (
-<div>hello</div>
-)
 
-/*export default class AddTrail extends React.Component {
-  constructor() {
-    super()
     this.state = {
-      fields: {Name: '',Location: '',Description: '',Difficulty: '',Length: ''},
-      errors: {}
+      Name: '',
+      Location: '',
+      Description: '',
+      Difficulty: '',
+      Length: ''
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.AddTrailForm = this.AddTrailForm.bind(this)
-
   }
 
-  handleChange(e) {
-    let fields = this.state.fields
-    fields[e.target.name] = e.target.value
-    this.setState({
-      fields
-    })
+  changeHandler = (e) => {
+    this.setState({[e.target.name]: e.target.value })
   }
 
-  AddTrailForm(e) {
+ submitHandler = e => {
     e.preventDefault()
-    if(this.validateForm()) {
-      let fields = {}
-      fields["Name"] = ""
-      fields["Location"] = ""
-      fields["Description"] = ""
-      fields["Difficulty"] = ""
-      fields["Length"] = ""
-      this.setState({fields:fields})
-
-      fetch('http://localhost:4200/api/Trails'), {
+      fetch('http://localhost:4200/api/Trails' , {
         method: 'post',
-        headers: {'content-Type':'application/json'},
+        headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
           "Name": this.Name.value,
           "Location": this.Location.value,
@@ -59,19 +34,43 @@ export const AddTrail = () => (
           "Difficulty": this.Difficulty.value,
           "Length": this.Length.value,
         })
-      }
-      console.log("Trail has been added")
-      alert("Form submitted")          
+      });
+    
+    console.log(this.state)
+    console.log("Trail has been added")
     }
-  }
-  
 
   render(){
-    return(
-      <div>hello</div>
+    const{Name,Location,Description,Difficulty,Length} = this.state
+    return (
+      <div>
+        <form onSubmit={this.submitHandler}>
+          <div>
+            <h5>Name</h5>
+            <input type="text" name="Name" id="Name" value={Name} onChange={this.changeHandler}/>
+          </div>
+          <div>
+            <h5>Location</h5>
+            <input type="text" name="Location" id="Location" value={Location} onChange={this.changeHandler}/>
+          </div>
+          <div>
+            <h5>Description</h5>
+            <input type="text" name="Description" id="Description" value={Description} onChange={this.changeHandler}/>
+          </div>
+          <div>
+            <h5>Difficulty</h5>
+            <input type="text" name="Difficulty" id="Difficulty" value={Difficulty} onChange={this.changeHandler}/>
+          </div>
+          <div>
+            <h5>Length</h5>
+            <input type="text" name="Length" id="Length" value={Length} onChange={this.changeHandler}/>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     )
   }
+}
 
 
 
-}*/
