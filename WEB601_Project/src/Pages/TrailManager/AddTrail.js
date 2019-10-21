@@ -4,7 +4,7 @@ import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, Dr
 
 var TrailArray = [];
 
-export class AddTrail extends Component {
+export class AddTrail extends React.Component {
 
   constructor(props) {
     super(props)
@@ -25,20 +25,18 @@ export class AddTrail extends Component {
     }*/
   }
 
+  componentDidMount(){
+    this.setState({
+        redirect: false
+    })  
+}
+
   changeHandler = (e) => {
     this.setState({[e.target.name]: e.target.value })
   }
 
  submitHandler(event) {
     event.preventDefault()
-
-    let fields = {}
-    fields["Name"] = ""
-    fields["Location"] = ""
-    fields["Description"] = ""
-    fields["Difficulty"] = ""
-    fields["Length"] = ""
-    this.setState({fields:fields})
 
       fetch('http://localhost:4200/api/Trails' , {
         method: 'post',
@@ -67,23 +65,23 @@ export class AddTrail extends Component {
         <form onSubmit={this.submitHandler}>
           <div>
             <h5>Name</h5>
-            <input type="text" name="Name" id="Name" value={this.Name} onChange={this.changeHandler}/>
+            <input type="text" name="Name" id="Name" value={this.Name} onChange={this.handleChange}/>
           </div>
           <div>
             <h5>Location</h5>
-            <input type="text" name="Location" id="Location" value={this.Location} onChange={this.changeHandler}/>
+            <input type="text" name="Location" id="Location" value={this.Location} onChange={this.handleChange}/>
           </div>
           <div>
             <h5>Description</h5>
-            <input type="text" name="Description" id="Description" value={this.Description} onChange={this.changeHandler}/>
+            <input type="text" name="Description" id="Description" value={this.Description} onChange={this.handleChange}/>
           </div>
           <div>
             <h5>Difficulty</h5>
-            <input type="text" name="Difficulty" id="Difficulty" value={this.Difficulty} onChange={this.changeHandler}/>
+            <input type="text" name="Difficulty" id="Difficulty" value={this.Difficulty} onChange={this.handleChange}/>
           </div>
           <div>
             <h5>Length</h5>
-            <input type="text" name="Length" id="Length" value={this.Length} onChange={this.changeHandler}/>
+            <input type="text" name="Length" id="Length" value={this.Length} onChange={this.handleChange}/>
           </div>
           <button id="Submit" type="submit">Submit</button>
         </form>
