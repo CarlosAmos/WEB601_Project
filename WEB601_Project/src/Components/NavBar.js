@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Navbar} from 'react-bootstrap';
+import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -14,8 +14,15 @@ const Styles = styled.div`
     color: Yellow;
     
 }
+
+.dropdown:hover {
+    color: Yellow;
 }
 
+.dropdown-content {
+    background-color: #0a3d00;
+}
+}
 `;
 
 export const NavBar = () => (
@@ -30,7 +37,11 @@ export const NavBar = () => (
                     <Nav.Item><Nav.Link href="/Map">Map</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Planner">Planner</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Events">Events</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/TrailManager/TrailManager">Trail-Manager</Nav.Link></Nav.Item>
+                    <NavDropdown title="Trail Manager" className="dropdown">
+                        <NavDropdown.Item href="/TrailManager/AddTrail">Add Trails</NavDropdown.Item>
+                        <NavDropdown.Item href="/TrailManager/ManageTail">Manage Trails</NavDropdown.Item>
+                        <NavDropdown.Item href="/TrailManager/DeleteTrail">Delete Trails</NavDropdown.Item>
+                    </NavDropdown> 
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import styled from 'styled-components';
+//import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+//import styled from 'styled-components';
 
-import { Container, Col, Row, Button, Nav} from 'react-bootstrap';
+import { Container, Col, Row, Button} from 'react-bootstrap';
 
 
-const Styles = styled.div`
+/*const Styles = styled.div`
 .description{
     width: 50%;
     height: 100;
@@ -15,7 +15,7 @@ const Styles = styled.div`
 
 }
 
-`;
+`;*/
 
 export const TrailManager = () => (
 <Container fluid='false'>

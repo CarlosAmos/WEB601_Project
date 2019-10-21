@@ -7,26 +7,12 @@ import {Planner} from './Pages/Planner';
 import {Events} from './Pages/Events';
 import {TrailManager} from './Pages/TrailManager/TrailManager';
 import {AddTrail} from './Pages/TrailManager/AddTrail';
+import {ManageTrail} from './Pages/TrailManager/ManageTail';
+import {DeleteTrail} from './Pages/TrailManager/DeleteTrail';
 import { Layout } from './Components/Layout';
 import {NavBar } from './Components/NavBar';
 
 class App extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-        isLoading: true,
-        contacts: []
-    }
-}
-
-componentDidMount(){
-  this.fetchData();
-}
-
-fetchData(){
-
-}
 
   render() {
     return (
@@ -42,6 +28,8 @@ fetchData(){
             <Route path="/Events" component={Events} />
             <Route path="/TrailManager/TrailManager" component={TrailManager} />
             <Route path="/TrailManager/AddTrail" component={AddTrail} />
+            <Route path="/TrailManager/ManageTail" component={ManageTrail} />
+            <Route path="/TrailManager/DeleteTrail" component={DeleteTrail} />
 
           </Switch>
         </Router>

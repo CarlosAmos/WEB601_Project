@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import Home1 from '../Images/Home1.jpg';
 import { Container, Col, Row, Button } from 'react-bootstrap';
 
-const Styles = styled.div`
+/*const Styles = styled.div`
 .image{
     width: 100%;
     height: 100;
@@ -16,7 +16,7 @@ const Styles = styled.div`
 
 }
 
-`;
+`;*/
 
 export const Trail = () => (
     <Container>

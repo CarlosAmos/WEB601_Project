@@ -21,13 +21,13 @@ const routes = require('./routes')
 
 router.get('/Trails', routes.TrailsList.listAllTrailsKnex);
 
-router.get('/Trails/:id', middlewares.checkID, routes.TrailsList.listSingleTrail);
+router.get('/Trails/:ID', middlewares.checkID, routes.TrailsList.listSingleTrail);
 
 router.post('/Trails', jsonParser, routes.TrailsList.postTrail);
 
-router.patch('/Trails/:id', jsonParser, middlewares.checkID, routes.TrailsList.updateTrail);
+router.patch('/Trails/:ID', jsonParser, middlewares.checkID, routes.TrailsList.updateTrail);
 
-router.delete('/Trails/:id', middlewares.checkID, routes.TrailsList.deleteTrail);
+router.delete('/Trails/:ID', middlewares.checkID, routes.TrailsList.deleteTrail);
 
 
 

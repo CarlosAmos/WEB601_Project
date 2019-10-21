@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
+//import styled from 'styled-components';
+//import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
 
-const Styles = styled.div`
+/*const Styles = styled.div`
 .description{
     width: 50%;
     height: 100;
@@ -12,7 +12,7 @@ const Styles = styled.div`
 
 }
 
-`;
+`;*/
 
 export const AddTrail = () => (
 <div>hello</div>
