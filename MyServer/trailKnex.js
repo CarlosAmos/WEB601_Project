@@ -48,7 +48,7 @@ function postTrail(req,res) {
 
     const payload = req.body
 
-    const mandatoryColumns = ['Name','Location']
+    const mandatoryColumns = ['Name','Location','Description','Difficulty','Length']
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
     if (mandatoryColumnsExists) {
