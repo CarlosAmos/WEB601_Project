@@ -29,7 +29,7 @@ function listSingleTrail(req,res) {
     .where({
         id: `${id}`
     })
-
+    //status codes
     .then(data => {
         if (data.length > 0) {
             return res.status(200).json(data)
@@ -51,9 +51,11 @@ function postTrail(req,res) {
     const mandatoryColumns = ['Name','Location','Description','Difficulty','Length']
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
+    //Check if the columns existm then add the data into the database.
     if (mandatoryColumnsExists) {
         knex('tblTrails')
             .insert(payload)
+            //Status codes
             .then(response => res.status(201).json('Trail record created'))
             .catch(error => res.status(500).json(error))
     } else {
@@ -76,7 +78,7 @@ function updateTrail(req,res) {
         .where('id', id)
         .update(payload)
         .then(response => {
-            
+            //Status codes
             if (response) {
              res.status(204).json()
             } else {
@@ -101,6 +103,7 @@ function deleteTrail(req,res) {
         .del()
         .then(response => {
             if (response) {
+                //Status codes
                 res.status(200).json(`Trail with id ${id} is removed`)
             } else {
                 res.status(404).json(`Trail with id ${id} not found`)

@@ -1,6 +1,6 @@
 import React from 'react';
 //import styled from 'styled-components';
-import { Container, Col, Row, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
+import { Container, Col, Row, Button, Form, InputGroup, FormControl, Dropdown } from 'react-bootstrap';
 import { Trail } from '../Trail';
 
 /*
@@ -120,6 +120,8 @@ export class ManageTrail extends React.Component {
                         <Col xs="12" m="12">
 
                         <p>The trail is:{Dropdownselect}</p>
+
+                        <p>{Dropdownselect}</p>
 
 
                         </Col>
