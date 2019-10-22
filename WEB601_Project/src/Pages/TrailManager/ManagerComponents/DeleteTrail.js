@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
 
+//Not using this file, will use in future
 
+//Form for deleting a trail
 //class ManageTrail extends React.Component
 export default class ManageTrail extends React.Component {
     constructor(props) {

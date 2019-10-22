@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import ListItem from './ListItem';
-import DeleteTrail from './ManagerComponents/DeleteTrail';
+//import DeleteTrail from './ManagerComponents/DeleteTrail';
 //import ManageType  from './ManagerComponents/ManageType';
 import _ from 'lodash';
 import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
 
-export class test extends Component {
+export class ManageTrails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,7 +37,7 @@ export class test extends Component {
             [event.target.name]: event.target.value
         })
     }
-
+    //This is used when the user presses submit, will post the data to the api
     submitHandler(event) {
         event.preventDefault()
     
@@ -59,7 +59,7 @@ export class test extends Component {
     state = {
         selectedManageType: ''
     }
-
+    //
     render() {
         if(this.state.isLoaded == true) {
             return(
@@ -67,6 +67,8 @@ export class test extends Component {
             );
         } 
         //console.log(this.state.selectedManageType);
+        
+        // Code for the "Pick an option" dropdown box. The selected option is rendered under the dropdown.
         return(
             //<p>{this.renderTrails()}</p>
             <div>
@@ -105,12 +107,13 @@ export class test extends Component {
         );         
     }
 
+    //This is used to render a form depending on the selected option
     renderSelectedManage(selectedManageType) {
 
         const {Dropdownselect} = this.state;
         var{ isLoaded, trails} = this.state;
    
-
+        //If delete a trail option is selected. Show this form
         if(selectedManageType == 'Delete a trail') {
             return(
                 <div>
@@ -136,6 +139,7 @@ export class test extends Component {
                 </Container>
                 </div>
             );
+        //If Add a new option is selected. Show this form
         } else if(selectedManageType == 'Add a new trail') {
             return (
                 <div>
@@ -164,6 +168,7 @@ export class test extends Component {
                   </form>
                 </div>
               )
+        //If edit a trail option is selected. Show this form
         } else if(selectedManageType == 'Edit a trail') {
             return (
                 <div>
@@ -180,7 +185,7 @@ export class test extends Component {
     }
 }
 
-
+//Non use code
     //{this.renderSelectedManage(this.state.selectedManageType)}
     /*renderSelectedManage(selectedManageType){
         const Manage = ManageType[selectedManageType]
