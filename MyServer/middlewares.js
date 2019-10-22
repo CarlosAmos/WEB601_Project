@@ -1,4 +1,4 @@
-// Used to check if the requested ID is an interger or not
+// Used to check if the requested ID is an integer or not
 
 function checkID(req, res, next) {
     const id = +req.params.id
