@@ -37,11 +37,7 @@ export const NavBar = () => (
                     <Nav.Item><Nav.Link href="/Map">Map</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Planner">Planner</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Events">Events</Nav.Link></Nav.Item>
-                    <NavDropdown title="Trail Manager" className="dropdown">
-                        <NavDropdown.Item href="/TrailManager/AddTrail">Add Trails</NavDropdown.Item>
-                        <NavDropdown.Item href="/TrailManager/ManageTail">Manage Trails</NavDropdown.Item>
-                        <NavDropdown.Item href="/TrailManager/DeleteTrail">Delete Trails</NavDropdown.Item>
-                    </NavDropdown> 
+                    <Nav.Item><Nav.Link href="/TrailManager/test">Trail-Manager</Nav.Link></Nav.Item>                    
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

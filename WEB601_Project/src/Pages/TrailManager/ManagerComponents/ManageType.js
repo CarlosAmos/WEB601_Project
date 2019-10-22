@@ -1,0 +1,1 @@
+export { default as DeleteTrail} from './DeleteTrail';
