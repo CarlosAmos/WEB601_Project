@@ -60,6 +60,8 @@ export class ManageTrail extends React.Component {
         })
     }
 
+
+
     handleChange(e) {
         let fields = this.state.fields
         fields[e.target.name] = e.target.value
@@ -91,6 +93,8 @@ export class ManageTrail extends React.Component {
 
         const {Dropdownselect} = this.state
 
+        
+
         if(!isLoaded) {
             return <div>Loading...</div>;
         }
@@ -121,7 +125,7 @@ export class ManageTrail extends React.Component {
 
                         <p>The trail is:{Dropdownselect}</p>
 
-                        <p>{Dropdownselect}</p>
+                        
 
 
                         </Col>

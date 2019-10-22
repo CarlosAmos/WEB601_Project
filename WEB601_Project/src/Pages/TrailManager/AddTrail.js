@@ -65,15 +65,15 @@ export class AddTrail extends React.Component {
         <form onSubmit={this.submitHandler}>
           <div>
             <h5>Name</h5>
-            <input type="text" name="Name" id="Name" value={this.Name} onChange={this.handleChange}/>
+            <input type="text" name="Name" id="Name" value={this.Name} onChange={this.changeHandler}/>
           </div>
           <div>
             <h5>Location</h5>
-            <input type="text" name="Location" id="Location" value={this.Location} onChange={this.handleChange}/>
+            <input type="text" name="Location" id="Location" value={this.Location} onChange={this.changeHandler}/>
           </div>
           <div>
             <h5>Description</h5>
-            <input type="text" name="Description" id="Description" value={this.Description} onChange={this.handleChange}/>
+            <input type="text" name="Description" id="Description" value={this.Description} onChange={this.changeHandler}/>
           </div>
           <div>
             <h5>Difficulty</h5>
