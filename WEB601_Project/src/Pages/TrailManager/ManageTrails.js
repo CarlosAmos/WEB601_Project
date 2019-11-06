@@ -8,12 +8,11 @@ import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, Dr
 export class ManageTrails extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             loading: true,
             trails: {},
-            fields: {Name:'',Location:'',Description:'',Difficulty:'',Length:''},
-
-            
+            fields: {Name:'',Location:'',Description:'',Difficulty:'',Length:''},           
         };
         this.submitHandler = this.submitHandler.bind(this);
     }
@@ -38,8 +37,9 @@ export class ManageTrails extends Component {
         })
     }
     //This is used when the user presses submit, will post the data to the api
-    submitHandler(event) {
-        event.preventDefault()
+    submitHandler(e) {
+        e.preventDefault()
+        
     
           fetch('http://localhost:4200/api/Trails' , {
             method: 'post',
@@ -61,7 +61,7 @@ export class ManageTrails extends Component {
     }
     //
     render() {
-        if(this.state.isLoaded == true) {
+        if(this.state.isLoaded === true) {
             return(
               <p>Loading...</p>
             );
@@ -114,7 +114,7 @@ export class ManageTrails extends Component {
         var{ isLoaded, trails} = this.state;
    
         //If delete a trail option is selected. Show this form
-        if(selectedManageType == 'Delete a trail') {
+        if(selectedManageType === 'Delete a trail') {
             return(
                 <div>
                 <Container>
@@ -139,43 +139,45 @@ export class ManageTrails extends Component {
                 </Container>
                 </div>
             );
+
+        // onSubmit={this.submitHandler}
         //If Add a new option is selected. Show this form
-        } else if(selectedManageType == 'Add a new trail') {
+        } else if(selectedManageType === 'Add a new trail') {
             return (
                 <div>
-                  <form onSubmit={this.submitHandler}>
+                  <form >
                     <div>
                       <h5>Name</h5>
-                      <input type="text" name="Name" id="Name" value={this.Name} onChange={this.changeHandler}/>
+                      <input type="text" name="Name" id="Name" value={this.Name} onChange={this.changeHandler} onSubmit={this.Name}/>
                     </div>
                     <div>
                       <h5>Location</h5>
-                      <input type="text" name="Location" id="Location" value={this.Location} onChange={this.changeHandler}/>
+                      <input type="text" name="Location" id="Location" value={this.Location} onChange={this.changeHandler} onSubmit={this.Location}/>
                     </div>
                     <div>
                       <h5>Description</h5>
-                      <input type="text" name="Description" id="Description" value={this.Description} onChange={this.changeHandler}/>
+                      <input type="text" name="Description" id="Description" value={this.Description} onChange={this.changeHandler} onSubmit={this.Description}/>
                     </div>
                     <div>
                       <h5>Difficulty</h5>
-                      <input type="text" name="Difficulty" id="Difficulty" value={this.Difficulty} onChange={this.handleChange}/>
+                      <input type="text" name="Difficulty" id="Difficulty" value={this.Difficulty} onChange={this.handleChange} onSubmit={this.Difficulty}/>
                     </div>
                     <div>
                       <h5>Length</h5>
-                      <input type="text" name="Length" id="Length" value={this.Length} onChange={this.handleChange}/>
+                      <input type="text" name="Length" id="Length" value={this.Length} onChange={this.handleChange} onSubmit={this.Length}/>
                     </div>
                     <button id="Submit" type="submit">Submit</button>
                   </form>
                 </div>
               )
         //If edit a trail option is selected. Show this form
-        } else if(selectedManageType == 'Edit a trail') {
+        } else if(selectedManageType === 'Edit a trail') {
             return (
                 <div>
                     <h1>Edit a trail</h1>
                 </div>
             )
-        } else if(selectedManageType == '') {
+        } else if(selectedManageType === '') {
             return (
                 <div>
                     <h1>Please Select an option</h1>
