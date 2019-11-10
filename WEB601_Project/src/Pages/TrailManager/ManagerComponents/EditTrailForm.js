@@ -1,1 +1,0 @@
-//Form for editing an existing trail.

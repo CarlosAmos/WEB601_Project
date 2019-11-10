@@ -20,21 +20,21 @@ function listSingleTrail(req,res) {
         knex
     } = req.app.locals
     const {
-        id
+        ID
     } = req.params
     knex
     //Query to select these columns from the table trails where the id matches
     .select('Name','Location','Description','Difficulty','Length')
     .from('tblTrails')
     .where({
-        id: `${id}`
+        ID: `${ID}`
     })
     //status codes
     .then(data => {
         if (data.length > 0) {
             return res.status(200).json(data)
         } else {
-            return res.status(404).json(`Trail with ID ${id} does not exist`);
+            return res.status(404).json(`Trail with ID ${ID} does not exist`);
         }
     })
     .catch(error => res.status(500).json(error))
@@ -56,12 +56,17 @@ function postTrail(req,res) {
         knex('tblTrails')
             .insert(payload)
             //Status codes
-            .then(response => res.status(201).json('Trail record created'))
+            .then(response => {
+                if(response) {
+                    res.status(200).json('Trail record created')
+                }})
             .catch(error => res.status(500).json(error))
     } else {
+        console.log("Error no man columns")
         return res.status(400).json(`Mandatory columns are required ${mandatoryColumns}`);
     }
 }
+
 
 
 //Update trails
@@ -70,19 +75,19 @@ function updateTrail(req,res) {
         knex
     } = req.app.locals
     const {
-        id
+        ID
     } = req.params
     const payload = req.body
     // Update entry in table trails where id matches
     knex('tblTrails')
-        .where('id', id)
+        .where('ID', ID)
         .update(payload)
         .then(response => {
             //Status codes
             if (response) {
              res.status(204).json()
             } else {
-                return res.status(404).json(`Trail with id ${id} not found`);
+                return res.status(404).json(`Trail with ID ${ID} not found`);
             }
     })
     .catch(error => res.status(500).json(error))
@@ -95,18 +100,18 @@ function deleteTrail(req,res) {
         knex
     } = req.app.locals
     const {
-        id
+        ID
     } = req.params
     //Delete entry in the table where the id matches
     knex('tblTrails')
-        .where('id', id)
+        .where('ID', ID)
         .del()
         .then(response => {
             if (response) {
                 //Status codes
-                res.status(200).json(`Trail with id ${id} is removed`)
+                res.status(200).json(`Trail with id ${ID} is removed`)
             } else {
-                res.status(404).json(`Trail with id ${id} not found`)
+                res.status(404).json(`Trail with id ${ID} not found`)
             }
         })
         .catch(error => res.status(500).json(error))

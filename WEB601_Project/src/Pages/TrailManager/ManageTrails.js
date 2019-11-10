@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 import ListItem from './ListItem';
 //import DeleteTrail from './ManagerComponents/DeleteTrail';
 //import ManageType  from './ManagerComponents/ManageType';
@@ -11,8 +12,14 @@ export class ManageTrails extends Component {
 
         this.state = {
             loading: true,
-            trails: {},
-            fields: {Name:'',Location:'',Description:'',Difficulty:'',Length:''},           
+            Trails: {
+                Name: '',
+                Location: '',
+                Description: '',
+                Difficulty: '',
+                Length: '',
+            },
+                    
         };
         this.submitHandler = this.submitHandler.bind(this);
     }
@@ -23,7 +30,7 @@ export class ManageTrails extends Component {
         .then(json => {
             this.setState({
                 isLoaded: false,
-                trails: json,
+                Trails: json,
             })
         });
     }  
@@ -42,7 +49,7 @@ export class ManageTrails extends Component {
         
     
           fetch('http://localhost:4200/api/Trails' , {
-            method: 'post',
+            method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
               "Name": this.Name.value,
@@ -55,6 +62,10 @@ export class ManageTrails extends Component {
         //console.log(this.state)
         console.log("Trail has been added")
         }
+
+    handleDeleteUser(id){
+        return (e) => this.props.deleteUser(id);
+    }
 
     state = {
         selectedManageType: ''
@@ -69,10 +80,29 @@ export class ManageTrails extends Component {
         //console.log(this.state.selectedManageType);
         
         // Code for the "Pick an option" dropdown box. The selected option is rendered under the dropdown.
+
         return(
-            //<p>{this.renderTrails()}</p>
             <div>
                 <Container>
+                    <Row>
+                        <Col xs='4' md='4'>
+                            <Button></Button>
+                        </Col>
+                        <Col xs='4' md='4'>
+                        <Button>Edit a trail</Button>
+                        </Col>
+                        <Col xs='4' md='4'>
+                        <Button><Link to="/Pages/TrailManager/DeleteTrails">Delete A Trail</Link></Button>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+
+        /*return(
+            //<p>{this.renderTrails()}</p>
+            <div>
+                /*<Container>
                     <Row>
                         <Col xs='12' md='3'>
                         
@@ -104,14 +134,15 @@ export class ManageTrails extends Component {
                 
             </div>
             
-        );         
+        );   */      
     }
 
     //This is used to render a form depending on the selected option
-    renderSelectedManage(selectedManageType) {
+    /*renderSelectedManage(selectedManageType) {
 
         const {Dropdownselect} = this.state;
-        var{ isLoaded, trails} = this.state;
+        const { isLoaded, Trails} = this.state;
+
    
         //If delete a trail option is selected. Show this form
         if(selectedManageType === 'Delete a trail') {
@@ -125,8 +156,8 @@ export class ManageTrails extends Component {
                                 <Form.Label>List of all trails</Form.Label>
                                 <Form.Control as="select" name="Dropdownselect" onChange={this.handleInputChange}>
                                     <h5>Pick a trail you would like to delete</h5>                                 
-                                    {trails.map(trails => ( 
-                                    <option id="TrailOption">{trails.Name}</option>
+                                    {Trails.map(Trails => ( 
+                                    <option id="TrailOption">{Trails.Name}</option>
                                     ))};                                                                       
                                 </Form.Control>
                                 </Form.Group>
@@ -134,6 +165,7 @@ export class ManageTrails extends Component {
                         </Col>
                         <Col xs="12" md="12">
                         <p>The trail you would like to delete is: {Dropdownselect}</p>
+                        <Button onClick={this.handleDeleteUser(Trails.id)}>Delete</Button>
                         </Col>
                     </Row>
                 </Container>
@@ -184,7 +216,7 @@ export class ManageTrails extends Component {
                 </div>
             )
         }
-    }
+    }*/
 }
 
 //Non use code

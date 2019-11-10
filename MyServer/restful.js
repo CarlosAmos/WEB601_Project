@@ -18,11 +18,12 @@ app.locals.knex = knex
 
 // Use the routes.js file
 const routes = require('./routes')
+//,
 
 // The get, post, patch and delete requests sent to the api
 router.get('/Trails', routes.TrailsList.listAllTrailsKnex);
 
-router.get('/Trails/:ID', middlewares.checkID, routes.TrailsList.listSingleTrail);
+router.get('/Trails/:ID',middlewares.checkID, routes.TrailsList.listSingleTrail);
 
 router.post('/Trails', jsonParser, routes.TrailsList.postTrail);
 
