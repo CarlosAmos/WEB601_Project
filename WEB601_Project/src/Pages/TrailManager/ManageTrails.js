@@ -219,21 +219,6 @@ export class ManageTrails extends Component {
     }*/
 }
 
-//Non use code
-    //{this.renderSelectedManage(this.state.selectedManageType)}
-    /*renderSelectedManage(selectedManageType){
-        const Manage = ManageType[selectedManageType]
 
-        return <Manage />
-    }*/
-
-    /*renderTrails() {
-        return _.map(this.state.trails, trails => {
-            //Turn the array into a list of items
-            return(
-                <ListItem Name={trails.Name} Location={trails.Location}/>
-            );
-        });
-    }*/
 
 
