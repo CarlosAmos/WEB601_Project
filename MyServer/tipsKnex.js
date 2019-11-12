@@ -47,7 +47,7 @@ function postTip(req,res) {
 
     const payload = req.body
 
-    const mandatoryColumns = ["Description"]
+    const mandatoryColumns = ['Description']
     const payloadKeys = Object.keys(payload)
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc))
     //Check if the columns existm then add the data into the database.
