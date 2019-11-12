@@ -30,10 +30,16 @@ router.delete('/Trails/:ID', middlewares.checkID, routes.TrailsList.deleteTrail)
 // The get, post, patch and delete requests sent to the api for event table
 router.get('/Events', routes.EventList.listAllEventsKnex);
 router.get('/Events/:ID',middlewares.checkID, routes.EventList.listSingleEvent);
+router.post('/Events', jsonParser, routes.EventList.postEvent);
+router.patch('/Events/:ID', jsonParser, middlewares.checkID, routes.EventList.updateEvent);
+router.delete('/Events/:ID', middlewares.checkID, routes.EventList.deleteEvent);
 
 // The get, post, patch and delete requests sent to the api for tips table
 router.get('/Tips', routes.TipsList.listAllTipsKnex);
 router.get('/Tips/:ID',middlewares.checkID, routes.TipsList.listSingleTip);
+router.post('/Tips', jsonParser, routes.TipsList.postTip);
+router.patch('/Tips/:ID', jsonParser, middlewares.checkID, routes.TipsList.updateTip);
+router.delete('/Tips/:ID', middlewares.checkID, routes.TipsList.deleteTip);
 
 app.use('/api', cors(), router);
 
