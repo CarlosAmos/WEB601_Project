@@ -6,7 +6,7 @@ function listAllTrailsKnex(req, res) {
     } = req.app.locals
     knex
         //Query to select these columns from the table trails
-        .select('ID','Name','Location','Description','Difficulty','Length')
+        .select('ID','Name','Location','Description','Difficulty','Length','ImgLoc')
         .from('tblTrails')
         //For the status codes
         .then(data => res.status(200).json(data))
