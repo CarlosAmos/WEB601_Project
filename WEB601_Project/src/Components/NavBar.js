@@ -32,11 +32,11 @@ export const NavBar = () => (
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/Trail">Trail</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/Map">Map</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/Planner">Planner</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/Events">Events</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/Home/Home">Home</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/Trail/Trail">Trail</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/Map/Map">Map</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/Planner/Planner">Planner</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/Events/Events">Events</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/TrailManager/ManageTrails">Trail-Manager</Nav.Link></Nav.Item>                    
                 </Nav>
             </Navbar.Collapse>

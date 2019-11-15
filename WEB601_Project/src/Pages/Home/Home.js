@@ -1,6 +1,6 @@
 import React from 'react'
 //import styled from 'styled-components';
-import Home1 from '../Images/Home1.jpg';
+import Home1 from './Images/Home1.jpg';
 import { Container, Col, Row } from 'react-bootstrap';
 
 /*const Styles = styled.div`
