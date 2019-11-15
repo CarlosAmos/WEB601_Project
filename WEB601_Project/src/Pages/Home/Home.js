@@ -1,7 +1,7 @@
 import React from 'react'
 //import styled from 'styled-components';
-import Home1 from './Images/Home1.jpg';
-import { Container, Col, Row } from 'react-bootstrap';
+import HomeCarousel from './HomeCarousel';
+import { Container, Col, Row, Carousel } from 'react-bootstrap';
 
 /*const Styles = styled.div`
 .image{
@@ -46,7 +46,7 @@ export class Home extends React.Component {
             <Container>
                 <div className="col-12">
                     <div className="image">
-                        <img src={Home1} alt="sefeee" width="100%"></img>
+                        <HomeCarousel/>
                     </div>
                     <Row className="justify-content-md-center" height='100'>
                         <Col xs="12" md="4">
