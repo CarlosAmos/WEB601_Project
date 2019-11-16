@@ -1,7 +1,10 @@
 import React from 'react';
 //import styled from 'styled-components';
+import { BrowserRouter as Router, Link, Switch,} from 'react-router-dom';
 import { Container, Col, Row, Button, Card } from 'react-bootstrap';
 //import TrailCard from '../Components/SingleTrailList';
+
+
 
 //Imports for images
 import mtarthur from '../Images/mtarthur.jpg';
@@ -53,7 +56,7 @@ export class Trail extends React.Component {
                                         <Card.Text>
                                         {Trail.Description}
                                                 </Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
+                                        <Link to="/Trail/TrailView/TrailView">View Trail</Link>
                                     </Card.Body>
                                 </Card>
                     </div>
