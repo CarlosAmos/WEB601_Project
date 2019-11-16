@@ -12,14 +12,7 @@ export class ManageTrails extends Component {
 
         this.state = {
             loading: true,
-            Trails: {
-                Name: '',
-                Location: '',
-                Description: '',
-                Difficulty: '',
-                Length: '',
-            },
-                    
+            Trails: [],                    
         };
         this.submitHandler = this.submitHandler.bind(this);
     }
@@ -63,10 +56,6 @@ export class ManageTrails extends Component {
         console.log("Trail has been added")
         }
 
-    handleDeleteUser(id){
-        return (e) => this.props.deleteUser(id);
-    }
-
     state = {
         selectedManageType: ''
     }
@@ -77,146 +66,86 @@ export class ManageTrails extends Component {
               <p>Loading...</p>
             );
         } 
-        //console.log(this.state.selectedManageType);
-        
-        // Code for the "Pick an option" dropdown box. The selected option is rendered under the dropdown.
+
+        var { Trails } = this.state;
 
         return(
             <div>
-                <Container>
-                    <Row>
-                        <Col xs='4' md='4'>
-                            <Button></Button>
-                        </Col>
-                        <Col xs='4' md='4'>
-                        <Button>Edit a trail</Button>
-                        </Col>
-                        <Col xs='4' md='4'>
-                        <Button><Link to="/Pages/TrailManager/DeleteTrails">Delete A Trail</Link></Button>
-                        </Col>
-                    </Row>
-                </Container>
+                <h2>Edit a Trail</h2>
+                    <Container>
+                        <Row>
+                            <Col md='3' xs='12'>
+                                                        
+                            </Col>
+                            <Col md='6' xs='12'>
+                                <div>
+                                <Form>                                
+                                        <Form.Group as={Col} controlId="formGridState">
+                                            <Form.Label>Trail Name</Form.Label>
+                                            <Form.Control as="select">
+                                            {Trails.map(Trail => (
+                                                <option key={Trail.ID}>{Trail.Name}</option>    
+                                                ))};                                            
+                                            </Form.Control>                                              
+                                        </Form.Group>
+                                       
+                                        <Form.Label>Name</Form.Label>
+                                    <InputGroup className="mb-3">
+                                        <InputGroup.Prepend>
+                                        </InputGroup.Prepend>
+                                        <FormControl
+                                            placeholder="Username"
+                                            aria-label="Username"
+                                            aria-describedby="basic-addon1"
+                                        />
+                                    </InputGroup>
+
+                                    <Form.Label>Location</Form.Label>
+                                    <Form.Group as={Col} controlId="formGridState">
+                                         <Form.Control as="select">
+                                                <option>...</option>  
+                                                <option>...</option>    
+                                                <option>...</option>                                   
+                                            </Form.Control>                                              
+                                        </Form.Group>
+
+                                    <Form.Label>Description</Form.Label>
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                        </InputGroup.Prepend>
+                                        <FormControl as="textarea" aria-label="With textarea" />
+                                    </InputGroup>
+
+                                    <Form.Label>Difficulty</Form.Label>
+                                    <Form.Group as={Col} controlId="formGridState">
+                                         <Form.Control as="select">
+                                                <option>Very Easy</option>  
+                                                <option>Easy</option>    
+                                                <option>Medium</option>
+                                                <option>Hard</option>
+                                                <option>Very Hard</option>                                   
+                                            </Form.Control>                                              
+                                        </Form.Group>
+
+                                        <Form.Label>Length</Form.Label>
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                        </InputGroup.Prepend>
+                                        <FormControl as="textarea" aria-label="With textarea" />
+                                    </InputGroup>
+
+                                </Form>  
+                                </div>              
+                            </Col>
+                            <Col md='3' xs='12'>
+                                                        
+                            </Col>
+                        </Row>
+                    </Container>
+               
             </div>
-        );
-
-        /*return(
-            //<p>{this.renderTrails()}</p>
-            <div>
-                /*<Container>
-                    <Row>
-                        <Col xs='12' md='3'>
-                        
-                        </Col>
-                        
-                        <Col xs='12' md='6'>
-                            <Form.Group as={Col} controlId="formGridState">
-                            <h4>What would you like to do?</h4>
-                                <Form.Control as="select" name="Dropdown" 
-                                onChange={(e) => {this.setState({selectedManageType: e.target.value})}}>
-                                    <option id="1">Add a new trail</option>
-                                    <option id="2">Edit a trail</option>
-                                    <option id="3">Delete a trail</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
-
-                        <Col xs='12' md='3'>
-                        
-                        </Col>
-                    </Row>
-
-                    <Row>
-                    {this.renderSelectedManage(this.state.selectedManageType)}
-                    </Row>
-                    
-                </Container>
-                
-                
-            </div>
-            
-        );   */      
+        );    
     }
-
-    //This is used to render a form depending on the selected option
-    /*renderSelectedManage(selectedManageType) {
-
-        const {Dropdownselect} = this.state;
-        const { isLoaded, Trails} = this.state;
-
-   
-        //If delete a trail option is selected. Show this form
-        if(selectedManageType === 'Delete a trail') {
-            return(
-                <div>
-                <Container>
-                    <Row>
-                        <Col xs="12" md="12">
-                        <Form>
-                            <Form.Group as={Col} controlId="PickaTrail">
-                                <Form.Label>List of all trails</Form.Label>
-                                <Form.Control as="select" name="Dropdownselect" onChange={this.handleInputChange}>
-                                    <h5>Pick a trail you would like to delete</h5>                                 
-                                    {Trails.map(Trails => ( 
-                                    <option id="TrailOption">{Trails.Name}</option>
-                                    ))};                                                                       
-                                </Form.Control>
-                                </Form.Group>
-                        </Form>                                       
-                        </Col>
-                        <Col xs="12" md="12">
-                        <p>The trail you would like to delete is: {Dropdownselect}</p>
-                        <Button onClick={this.handleDeleteUser(Trails.id)}>Delete</Button>
-                        </Col>
-                    </Row>
-                </Container>
-                </div>
-            );
-
-        // onSubmit={this.submitHandler}
-        //If Add a new option is selected. Show this form
-        } else if(selectedManageType === 'Add a new trail') {
-            return (
-                <div>
-                  <form >
-                    <div>
-                      <h5>Name</h5>
-                      <input type="text" name="Name" id="Name" value={this.Name} onChange={this.changeHandler} onSubmit={this.Name}/>
-                    </div>
-                    <div>
-                      <h5>Location</h5>
-                      <input type="text" name="Location" id="Location" value={this.Location} onChange={this.changeHandler} onSubmit={this.Location}/>
-                    </div>
-                    <div>
-                      <h5>Description</h5>
-                      <input type="text" name="Description" id="Description" value={this.Description} onChange={this.changeHandler} onSubmit={this.Description}/>
-                    </div>
-                    <div>
-                      <h5>Difficulty</h5>
-                      <input type="text" name="Difficulty" id="Difficulty" value={this.Difficulty} onChange={this.handleChange} onSubmit={this.Difficulty}/>
-                    </div>
-                    <div>
-                      <h5>Length</h5>
-                      <input type="text" name="Length" id="Length" value={this.Length} onChange={this.handleChange} onSubmit={this.Length}/>
-                    </div>
-                    <button id="Submit" type="submit">Submit</button>
-                  </form>
-                </div>
-              )
-        //If edit a trail option is selected. Show this form
-        } else if(selectedManageType === 'Edit a trail') {
-            return (
-                <div>
-                    <h1>Edit a trail</h1>
-                </div>
-            )
-        } else if(selectedManageType === '') {
-            return (
-                <div>
-                    <h1>Please Select an option</h1>
-                </div>
-            )
-        }
-    }*/
 }
 
 

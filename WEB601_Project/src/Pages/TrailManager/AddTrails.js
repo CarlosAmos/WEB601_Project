@@ -22,13 +22,13 @@ export class AddTrails extends Component {
         });
         console.log("Trail has been added")
     }
-
+ 
     render() {
         
         return(  
                    
             <div>
-                
+                <form onSubmit={this.handleSubmit}>
                 <h5>Name</h5>
                 <input ref={(ref) => {this.Name = ref}} type="text" id="Name" name="Name"/>
                 <h5>Location</h5>
@@ -41,6 +41,7 @@ export class AddTrails extends Component {
                 <input ref={(ref) => {this.Length = ref}} type="text" id="Length" name="Length"/>
 
                 <button id="Submit" type="submit" onSubmit={this.handleSubmit}>Add Trail</button>
+                </form>
             </div>
         )
     }
