@@ -2,24 +2,10 @@ import React from 'react'
 //import styled from 'styled-components';
 //import Home1 from '../Images/Home1.jpg';
 import { Container, Col, Row } from 'react-bootstrap';
-
-/*const Styles = styled.div`
-.image{
-    width: 100%;
-    height: 100;
-    position: absolute;
-    border: '4px solid black' ;
-}
-.ContentBoxes{
-    border: '4px solid black' ;
-}
-
-}
-
-`;*/
+import './Planner.css'
 
 export const Planner = () => (
-    <Container>
+    <Container id="Container">
     <div className="col-12">
     <Row className="justify-content-md-center" height='100'>
         <div className="image">
