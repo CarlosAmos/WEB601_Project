@@ -1,0 +1,15 @@
+#Container {
+    background-color: white;  
+    height: 105%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#Formbox {
+    
+    Width: 90%;
+    top: 0;
+    right: 0;
+    left: 5%;
+    position: relative;
+}

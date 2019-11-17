@@ -2,21 +2,7 @@ import React from 'react'
 //import styled from 'styled-components';
 import HomeCarousel from './HomeCarousel';
 import { Container, Col, Row } from 'react-bootstrap';
-
-/*const Styles = styled.div`
-.image{
-    width: 100%;
-    height: 100;
-    position: absolute;
-    border: '4px solid black' ;
-}
-.ContentBoxes{
-    border: '4px solid black' ;
-}
-
-}
-
-`;*/
+import './Home.css'
 
 export class Home extends React.Component {
     constructor(props) {
@@ -44,7 +30,7 @@ export class Home extends React.Component {
 
         return (
             <Container>
-                <div className="col-12">
+                <div id="Container" className="col-12">
                     <div className="image">
                         <HomeCarousel/>
                     </div>

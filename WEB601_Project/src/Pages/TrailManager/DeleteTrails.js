@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Col, Row, Button, Form } from 'react-bootstrap';
+import './DeleteTrail.css'
 
 export class DeleteTrails extends Component {
     constructor(props) {
@@ -38,15 +39,16 @@ export class DeleteTrails extends Component {
 
         return(
             <div>
-                <h2>Delete a Trail</h2>
+                <br/>
                     <Container>
                         <Row>
                             <Col md='3' xs='12'>
                                                         
                             </Col>
                             <Col md='6' xs='12'>
-                                <div>
-                                <Form>                                
+                                <div id="Container">
+                                <h2>Delete a Trail</h2>
+                                <Form id="Formbox">                                
                                         <Form.Group as={Col} controlId="formGridState">
                                             <Form.Label>Trail Name</Form.Label>
                                             <Form.Control as="select">

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Col, Row, Form, InputGroup,FormControl } from 'react-bootstrap';
+import './ManageTrail.css'
 
 export class ManageTrails extends Component {
     constructor(props) {
@@ -65,16 +66,17 @@ export class ManageTrails extends Component {
         var { Trails } = this.state;
 
         return(
-            <div>
-                <h2>Edit a Trail</h2>
+            <div>          
+                <br/>      
                     <Container>
                         <Row>
                             <Col md='3' xs='12'>
                                                         
                             </Col>
                             <Col md='6' xs='12'>
-                                <div>
-                                <Form>                                
+                                <div id="Container">
+                                    <h2>Edit a Trail</h2>
+                                <Form id="Formbox">                                
                                         <Form.Group as={Col} controlId="formGridState">
                                             <Form.Label>Trail Name</Form.Label>
                                             <Form.Control as="select">

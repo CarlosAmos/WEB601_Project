@@ -1,0 +1,21 @@
+#Container {
+    background-color: white;  
+    height: 105%;
+    padding-top: 20px;
+    
+}
+
+#Formbox {
+    
+    Width: 90%;
+    top: 0;
+    right: 0;
+    left: 5%;
+    position: relative;
+}
+
+#PhotoGallary {
+  
+    height: 90%;
+    width: 90%;
+}

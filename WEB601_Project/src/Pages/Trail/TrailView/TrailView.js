@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
-import { Container, Col, Row, Table} from 'react-bootstrap';
+import { Container, Col, Row, Table, Carousel} from 'react-bootstrap';
 import mtarthur from '../Images/mtarthur1.jpg';
+import mtarthur1 from '../Images/mtarthur1.jpg';
+import mtarthur2 from '../Images/mtarthur2.jpg';
+import mtlodestone1 from '../Images/mtlodestone1.jpg';
+import mtlodestone2 from '../Images/mtlodestone2.jpg';
+
+import './TrailView.css';
+
 
 export class TrailView extends Component {
     constructor(props) {
@@ -29,8 +36,9 @@ export class TrailView extends Component {
 
         return(
             <div>
+                <br/>
                 {Trails.map(Trail => (
-                <Container key={Trail.ID}>
+                <Container key={Trail.ID} id="Container">
                     <Row>
                         <Col md='4' xs='12'>
                             <img src={mtarthur} width="100% "></img>
@@ -53,11 +61,59 @@ export class TrailView extends Component {
                         <br/>
                         <p>{Trail.Description}</p>
                         </Col>
-                    </Row>
-                    <Row>
-                <h4>Photos of {Trail.Name}</h4>
+                    </Row>                    
+                    <Row id="PhotoGallery">
+                <h4 style={{textAlign:"right"}}>Photos of {Trail.Name}</h4>
+                    <Col >
+                    
+                    <Carousel>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-60"
+                        src={mtarthur1}
+                        alt="First slide"
+                    />
+                    <Carousel.Caption>
+                                                
+                    </Carousel.Caption>
+                </Carousel.Item>
 
+                <Carousel.Item>
+                    <img
+                        className="d-block w-60"
+                        src={mtarthur2}
+                        alt="Second slide"
+                    />
+                    <Carousel.Caption>
+                        
+                    </Carousel.Caption>
+                </Carousel.Item>
 
+                <Carousel.Item>
+                    <img
+                        className="d-block w-60"
+                        src={mtlodestone1}
+                        alt="Third slide"
+                    />
+                    <Carousel.Caption>
+                        
+                    </Carousel.Caption>
+                </Carousel.Item>
+
+                <Carousel.Item>
+                    <img
+                        className="d-block w-60"
+                        src={mtlodestone2}
+                        alt="Fourth slide"
+                    />
+                    <Carousel.Caption>
+                        
+                    </Carousel.Caption>
+                </Carousel.Item>
+
+            </Carousel>
+                    
+                    </Col>
                     </Row>
                 </Container>
                 ))};

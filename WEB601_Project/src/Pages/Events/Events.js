@@ -1,7 +1,7 @@
 import React from 'react'
 import MountainBiking1 from './Images/MountainBiking.jpg';
 import { Container, Col, Row } from 'react-bootstrap';
-
+import './Events.css'
 
 export class Events extends React.Component {
 constructor(props){
@@ -27,7 +27,7 @@ render() {
 var { Events } = this.state;
 
 return (
-    <div>
+    <div id="Container">
         <h2> Events </h2>
         {Events.map(Event => (
             <Container>
