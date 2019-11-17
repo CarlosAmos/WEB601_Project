@@ -17,8 +17,7 @@ const HomeCarousel = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Arhtur Summit Trail</h3>                        
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -29,8 +28,7 @@ const HomeCarousel = () => {
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Arthur Summit Trail</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -41,8 +39,7 @@ const HomeCarousel = () => {
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Lodestone Summit Trail</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -53,8 +50,7 @@ const HomeCarousel = () => {
                         alt="Fourth slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Lodestone Summit Trail</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
 
