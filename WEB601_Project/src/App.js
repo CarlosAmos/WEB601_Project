@@ -28,7 +28,7 @@ class App extends Component {
             <Route path="/Planner/Planner" component={Planner} />
             <Route path="/Events/Events" component={Events} />
             <Route path="/TrailManager/TrailHome" component={TrailHome} />
-            <Route path="/Trail/TrailView/TrailView" component={TrailView} />
+            <Route path="/Trail/TrailView/TrailView/:id" component={TrailView} />
             <Route path="/TrailManager/AddTrails" component={AddTrails} />
             <Route path="/TrailManager/ManageTrails" component={ManageTrails} />
             <Route path="/TrailManager/DeleteTrails" component={DeleteTrails} />

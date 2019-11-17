@@ -16,7 +16,7 @@ export class Trail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            Trails: []
+            Trails: [],            
         }
     }
 
@@ -27,8 +27,6 @@ export class Trail extends React.Component {
                 this.setState({
                     Trails: json,
 
-                }, () => {
-                    console.log(this.state);
                 })
             });
     }
@@ -43,7 +41,7 @@ export class Trail extends React.Component {
             {Trails.map(Trail => (
                 <Container>
                     <br />
-                    <Row>
+                    <Row> 
                     <Col md='1' xs='12'>
 
                     </Col>
@@ -58,7 +56,7 @@ export class Trail extends React.Component {
                                         <Card.Text>
                                         {Trail.Location}
                                                 </Card.Text>
-                                        <Link to="/Trail/TrailView/TrailView" key={Trail.ID}>View Trail</Link>
+                                        <Link to={`/Trail/TrailView/TrailView/${Trail.ID}`}>View Trail</Link>
                                     </Card.Body>
                                 </Card>
                     </div>
