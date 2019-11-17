@@ -1,6 +1,4 @@
 import React from 'react'
-//import styled from 'styled-components';
-import Home1 from './Images/Home1.jpg';
 import MountainBiking1 from './Images/MountainBiking.jpg';
 import { Container, Col, Row } from 'react-bootstrap';
 

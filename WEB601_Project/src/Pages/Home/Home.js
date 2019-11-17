@@ -1,7 +1,7 @@
 import React from 'react'
 //import styled from 'styled-components';
 import HomeCarousel from './HomeCarousel';
-import { Container, Col, Row, Carousel } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 
 /*const Styles = styled.div`
 .image{

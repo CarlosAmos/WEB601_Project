@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
-import ListItem from './ListItem';
-//import DeleteTrail from './ManagerComponents/DeleteTrail';
-//import ManageType  from './ManagerComponents/ManageType';
-import _ from 'lodash';
-import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Container, Col, Row, Form, InputGroup,FormControl } from 'react-bootstrap';
 
 export class ManageTrails extends Component {
     constructor(props) {

@@ -1,16 +1,16 @@
 import React from 'react';
 //import styled from 'styled-components';
-import { BrowserRouter as Router, Link, Switch,} from 'react-router-dom';
-import { Container, Col, Row, Button, Card } from 'react-bootstrap';
+import { BrowserRouter as Router, Link,} from 'react-router-dom';
+import { Container, Col, Row, Card } from 'react-bootstrap';
 //import TrailCard from '../Components/SingleTrailList';
 
 
 
 //Imports for images
 import mtarthur from '../Images/mtarthur.jpg';
-import lakesylvester from '../Images/lakesylvester.jpg';
-import mtlodestone from '../Images/mtlodestone.jpg';
-import mtrobert from '../Images/mtrobert.jpg'
+//import lakesylvester from '../Images/lakesylvester.jpg';
+//import mtlodestone from '../Images/mtlodestone.jpg';
+//import mtrobert from '../Images/mtrobert.jpg'
 
 export class Trail extends React.Component {
     constructor(props) {
@@ -27,6 +27,8 @@ export class Trail extends React.Component {
                 this.setState({
                     Trails: json,
 
+                }, () => {
+                    console.log(this.state);
                 })
             });
     }
@@ -46,7 +48,7 @@ export class Trail extends React.Component {
 
                     </Col>
                     <Col md='2' xs='12'>
-                    <img src={mtarthur} width="130% "></img>
+                    <img src={mtarthur} alt={Trail.Name} width="130% "></img>
                     </Col>
                     <Col md='8' xs='12'>
                     <div key={Trail.ID}>
@@ -54,9 +56,9 @@ export class Trail extends React.Component {
                                     <Card.Body>
                                         <Card.Title>{Trail.Name}</Card.Title>
                                         <Card.Text>
-                                        {Trail.Description}
+                                        {Trail.Location}
                                                 </Card.Text>
-                                        <Link to="/Trail/TrailView/TrailView">View Trail</Link>
+                                        <Link to="/Trail/TrailView/TrailView" key={Trail.ID}>View Trail</Link>
                                     </Card.Body>
                                 </Card>
                     </div>

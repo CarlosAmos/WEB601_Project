@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
-import ListItem from './ListItem';
-//import DeleteTrail from './ManagerComponents/DeleteTrail';
-//import ManageType  from './ManagerComponents/ManageType';
-import _ from 'lodash';
-import { Container, Col, Row, Button, Form, InputGroup,FormControl, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Container, Col, Row, Button, Form } from 'react-bootstrap';
 
 export class DeleteTrails extends Component {
     constructor(props) {
@@ -36,6 +31,7 @@ export class DeleteTrails extends Component {
         })
     }
 
+
     render() {
         
         var { Trails } = this.state;
@@ -61,7 +57,7 @@ export class DeleteTrails extends Component {
                                         </Form.Group>
                                 </Form>  
                                 <br/>
-                                <Button variant="danger">Danger</Button>
+                                <Button variant="danger">Delete Trail</Button>
                                 </div>              
                             </Col>
                             <Col md='3' xs='12'>

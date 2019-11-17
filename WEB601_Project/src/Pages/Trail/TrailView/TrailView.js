@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Link, Switch,} from 'react-router-dom';
 import { Container, Col, Row, Table} from 'react-bootstrap';
 
 
@@ -8,13 +7,12 @@ export class TrailView extends Component {
         super(props);
 
         this.state = {
-            loading: true,
-            Trails: [],                    
+            Trails: [],                       
         };        
     }
 
     componentDidMount() {
-        fetch('http://localhost:4200/api/Trails')
+        fetch(`http://localhost:4200/api/Trails/`)
         .then(res => res.json())
         .then(json => {
             this.setState({
