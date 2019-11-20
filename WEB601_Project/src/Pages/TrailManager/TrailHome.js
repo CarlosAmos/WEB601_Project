@@ -18,7 +18,7 @@ export class TrailHome extends Component {
                     <br />
                     <Row>
 
-                        <Col md='4' xs='12'>
+                        <Col md='6' xs='12'>
                             <div id="Trailbox">
 
                                 <div id="IconBox">
@@ -31,13 +31,13 @@ export class TrailHome extends Component {
                             </div>
                         </Col>
 
-                        <Col md='4' xs='12'>
+                        <Col md='6' xs='12'>
                             <div id="Trailbox">
 
                                 <div id="IconBox">
-                                    <IconButton id="Icon" size="large" aria-label="delete" href={'/TrailManager/ManageTrails'}>
+                                    <IconButton id="Icon" size="large" aria-label="delete" href={'/TrailManager/TrailPicker'}>
                                         <EditIcon />
-                                        Edit a Trail
+                                        Edit/Delete a Trail
                                     </IconButton>
                                 </div>
 
@@ -45,16 +45,6 @@ export class TrailHome extends Component {
                         </Col>
 
                         <Col md='4' xs='12'>
-                            <div id="Trailbox">
-
-                                <div id="IconBox">
-                                    <IconButton id="Icon" size="large" aria-label="delete" href={'/TrailManager/DeleteTrails'}>
-                                        <DeleteIcon />
-                                        Delete a Trail
-                                    </IconButton>
-                                </div>
-
-                            </div>
                         </Col>
 
                     </Row>
