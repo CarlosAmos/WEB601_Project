@@ -1,2 +1,2 @@
 export * from './Alert.Constants';
-export * from './Trail.Constants';
+export * from './User.Constants';
