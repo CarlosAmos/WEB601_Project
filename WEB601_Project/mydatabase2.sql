@@ -32,6 +32,16 @@ CREATE TABLE tblEvents (
     foreign key(TrackID) references tblTrails(ID)    
 );
 
+DROP TABLE IF EXISTS tblUsers;
+CREATE TABLE tblUsers (
+	ID int(4) auto_increment PRIMARY KEY,
+    Username varchar(40),
+    Password varchar(40)
+);
+
+INSERT INTO tblUsers(Username, Password)
+VALUES ('Admin','Password');
+
 INSERT INTO tblEvents (Name, Location,Description,Length,Date)
 VALUES ('Nydia Time Trial','Nydia Saddle','A time trial to see who can complete the Nydia Saddle trail the fastest','6',18/11/2019),
 ('Super D - Round 3','Richmond','Round 3 of the Super D downhill mountain bike racing','3',14/11/2019);
@@ -49,6 +59,7 @@ VALUES ('Arthur Summit Trail','Kahurangi National Park','Walking trail that begi
  ('Sylvester Hut Trail','Cobb Valley','The Sylvester hut trail starts at the Cobb Dam and makes it;s way up towards Lake Sylvester.
  This trail makes a great day walk or even an overnight trip staying at the Sylvester hut at the top','Medium','9','lakesylvester'),
  ('Mount Robert Circuit','Nelson Lakes National Park','The Mount Robert circuit starts at the carkpark and makes its 
- way up the side of Mount Robert. Reaching the top provides a great view of Lake Rotoiti.','Medium','9','mtrobert');
+ way up the side of Mount Robert. Reaching the top provides a great view of Lake Rotoiti.','Medium','9','mtrobert'),
+ ('Test Name','Test Location','Test Descrpiotn','Very Hard','9','Test');
 
 

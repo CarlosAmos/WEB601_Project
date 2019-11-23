@@ -41,6 +41,11 @@ router.post('/Tips', jsonParser, routes.TipsList.postTip);
 router.patch('/Tips/:ID', jsonParser, middlewares.checkID, routes.TipsList.updateTip);
 router.delete('/Tips/:ID', middlewares.checkID, routes.TipsList.deleteTip);
 
+//requests for the users table
+router.get('/Users', routes.UserList.listAllUsersKnex);
+router.post('/Users', jsonParser, routes.UserList.postUser);
+router.post('/Users', jsonParser, routes.UserList.authenticateUser);
+
 app.use('/api', cors(), router);
 
 // connection to database

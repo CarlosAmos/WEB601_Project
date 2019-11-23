@@ -62,7 +62,6 @@ function postTrail(req,res) {
                 }})
             .catch(error => res.status(500).json(error))
     } else {
-        console.log("Error no man columns")
         return res.status(400).json(`Mandatory columns are required ${mandatoryColumns}`);
     }
 }
