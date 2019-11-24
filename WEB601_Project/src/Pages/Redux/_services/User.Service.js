@@ -18,16 +18,37 @@ function login(Username, Password) {
     .then(Users => {
         localStorage.setItem('Users', JSON.stringify(Users))
 
-        return account
+        return Users
     })
 }
 
+//Logout
+function logout() {
+    localStorage.removeItem('User')
+}
+
 //Register function
-function register(fields) {
+function register(User) {
     const requestOptions = {
         method: 'POST',
         hedaers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(user)
+        body: JSON.stringify(User)
     };
     return fetch(`/Users/Register`, requestOptions).then(handleResponse);
+}
+
+function handleResponse(response) {
+    return response.text().then(text => {
+        const data = text && JSON.parse(text);
+        if (!response.ok) {
+            if (response.status === 401) {
+                logout();
+            }
+
+            const error = (data && data.message) || response.statusText;
+            return Promise.reject(error);
+        }
+
+        return data;
+    });
 }

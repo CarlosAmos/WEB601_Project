@@ -5,12 +5,35 @@ import {connect} from 'react-redux';
 import Button from '@material-ui/core/Button';
 import './Login.css'
 
+import { userActions } from '../Redux/_actions/User.Action';
+
 export class Login extends Component {
-    
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            Username: '',
+            Password: '',
+            submitted: false
+        };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }    
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        this.setState({ submitted: true});
+        const {Username,Password} = this.state;
+        if (Username && Password) {
+            this.props.login(Username,Password);
+        }
+        
+    }
 
     render() {
-
-
+        const {logginIn} = this.props;
+        const {Username,Password,submitted} = this.state;
         return(
             <div>
                 <br/>
@@ -20,17 +43,30 @@ export class Login extends Component {
                         </Col>
                         <Col id='Container' md='6' s='12'>
                             <h2>Login</h2>
-                            <Form>
+                            <Form onSubmit={this.handleSubmit}>
+                            <div>                            
                                 <Form.Group controlId="formBasicUsername">
                                     <Form.Label>Username</Form.Label>
-                                    <Form.Control type="username" placeholder="Enter Username" />                                    
+                                    <Form.Control 
+                                    type="text" 
+                                    name="Username"
+                                    ref={(ref) => { this.Username = ref }}
+                                    placeholder="Enter Username" 
+                                    />                                    
                                 </Form.Group>
-
-                                <Form.Group controlId="formBasicPassword">
+                            </div>
+                            <div>
+                            <Form.Group controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
+                                    <Form.Control 
+                                    type="password" 
+                                    name="Password"
+                                    ref={(ref) => { this.Password = ref }}
+                                    placeholder="Password" 
+                                    />
                                 </Form.Group>
-                                <Button variant="primary" >
+                            </div>                                
+                                <Button variant="primary" type="submit" onSubmit={this.handleSubmit} >
                                     Login
                                 </Button>
                                 <Button variant="primary" >
@@ -49,6 +85,17 @@ export class Login extends Component {
         );    
     }
 }
+
+function mapState(state) {
+    const {logginIn} = state.authentication
+    return {logginIn};
+}
+
+const actionCreators = {
+    login: userActions.login,
+    logout: userActions.logout
+};
+
 
 
 
