@@ -10,6 +10,7 @@ import {TrailHome} from './Pages/TrailManager/TrailHome';
 import {TrailPicker} from './Pages/TrailManager/TrailPicker';
 import {ManageTrails} from './Pages/TrailManager/ManageTrails';
 import {AddTrails} from './Pages/TrailManager/AddTrails';
+import {Login} from './Pages/Login/Login';
 
 import { Layout } from './Components/Layout';
 import { NavBar } from './Components/NavBar';
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="/Map/Map" component={Map} />
             <Route path="/Planner/Planner" component={Planner} />
             <Route path="/Events/Events" component={Events} />
+            <Route path="/Login/Login" component={Login} />
             <Route path="/TrailManager/TrailHome" component={TrailHome} />
             <Route path="/Trail/TrailView/TrailView/:id" component={TrailView} />
             <Route path="/TrailManager/TrailPicker" component={TrailPicker} />
