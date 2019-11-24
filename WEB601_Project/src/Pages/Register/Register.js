@@ -5,7 +5,8 @@ import {connect} from 'react-redux';
 import Button from '@material-ui/core/Button';
 import './Register.css'
 
-import { userActions } from '../Redux/_actions/User.Action';
+import { userActions } from '../../_actions/User.Action';
+
 
 class Register extends React.Component {
     constructor(props) {
