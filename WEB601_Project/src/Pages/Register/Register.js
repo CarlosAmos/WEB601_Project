@@ -3,37 +3,37 @@ import { Container, Col, Row, Form,} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Button from '@material-ui/core/Button';
-import './Login.css'
+import './Register.css'
 
-import { userActions } from '../../_actions/User.Action';
+import { userActions } from '../Redux/_actions/User.Action';
 
-class Login extends React.Component {
+class Register extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            Username: '',
-            Password: '',
+            User: {
+                Username: '',
+                Password: ''
+            },
             submitted: false
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
-    }    
+    }  
+    
+    handleSubmit(event) {
+        event.preventDefault();
 
-    handleSubmit(e) {
-        e.preventDefault();
-
-        this.setState({ submitted: true});
-        const {Username,Password} = this.state;
-        if (Username && Password) {
-            this.props.login(Username,Password);
+        this.setState({ submitted: true });
+        const { User } = this.state;
+        if (User.Username && User.Password) {
+            this.props.register(User);
         }
-        
     }
-
+    
     render() {
-        const {logginIn} = this.props;
-        const {Username,Password,submitted} = this.state;
+       const {registering} = this.props;
+       const {User, submitted} = this.state;
         return(
             <div>
                 <br/>
@@ -42,9 +42,9 @@ class Login extends React.Component {
                         <Col md='3' s='12'>
                         </Col>
                         <Col id='Container' md='6' s='12'>
-                            <h2>Login</h2>
+                            <h2>Register</h2>
                             <Form onSubmit={this.handleSubmit}>
-                            <div>                            
+                            <div className={'form-group' + (submitted && !User.Username ? ' has-error' : '')}>                            
                                 <Form.Group controlId="formBasicUsername">
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control 
@@ -55,7 +55,7 @@ class Login extends React.Component {
                                     />                                    
                                 </Form.Group>
                             </div>
-                            <div>
+                            <div className={'form-group' + (submitted && !User.Password ? ' has-error' : '')}>
                             <Form.Group controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control 
@@ -66,11 +66,11 @@ class Login extends React.Component {
                                     />
                                 </Form.Group>
                             </div>                                
-                                <Button variant="primary" type="submit" onSubmit={this.handleSubmit} >
-                                    Login
-                                </Button>
-                                <Button variant="primary" href={'../Register/Register'}>
+                                <Button variant="primary" type="submit" >
                                     Register
+                                </Button>
+                                <Button variant="primary" href={'../Login/Login'}>
+                                    Cancel
                                 </Button>
                             </Form>
                         </Col>
@@ -87,19 +87,15 @@ class Login extends React.Component {
 }
 
 function mapState(state) {
-    const {logginIn} = state.authentication
-    return {logginIn};
+    const {registering} = state.registration;
+    return {registering};
 }
 
 const actionCreators = {
-    login: userActions.login,
-    logout: userActions.logout
-};
-
-const connectedLoginPage = connect (mapState, actionCreators)(Login);
-export {connectedLoginPage as Login}
-
-
+    reigster: userActions.register
+}
+const connectedRegisterPage = connect(mapState, actionCreators) (Register)
+export {connectedRegisterPage as Register}
 
 
 

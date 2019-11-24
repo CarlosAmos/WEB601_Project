@@ -1,0 +1,17 @@
+#Container {
+    background-color: white;  
+    height: 105%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-style: solid;
+}
+
+#Formbox {
+    
+    Width: 90%;
+    top: 0;
+    right: 0;
+    left: 5%;
+    position: relative;
+}
