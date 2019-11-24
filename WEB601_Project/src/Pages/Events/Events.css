@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Roboto&display=swap');
+
 #Container {
     background-color: white;
+}
+
+h2 {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+h4 {
+    font-family: 'Lexend Deca', sans-serif;
 }

@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Roboto&display=swap');
+
 body {
     background-image: url('./Images/backgroundimage.jpg');    
+    font-family: 'Roboto', sans-serif;
 }
+
+h2 {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+
 
 #Container {
     background-color: white;

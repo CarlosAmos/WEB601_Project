@@ -3,8 +3,11 @@ import {Nav, Navbar} from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Roboto&display=swap');
+
 .navbar {
     background-color: #0a3d00;
+    font-family: 'Lexend Deca', sans-serif;
 }
 
 .navbar-brand, .navbar-nav .nav-link {

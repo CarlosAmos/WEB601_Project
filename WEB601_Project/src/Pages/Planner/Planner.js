@@ -62,7 +62,7 @@ export const Planner = () => (
         </Row>
         <Row className="justify-content-md-left" height='100'>
         <div>
-            <h1>Total time here</h1>
+            <h1>Total Length: Length here</h1>
         </div>
         </Row>         
         <Row className="justify-content-md-center" height='100'>
