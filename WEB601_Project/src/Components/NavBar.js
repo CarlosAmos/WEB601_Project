@@ -8,6 +8,7 @@ const Styles = styled.div`
 .navbar {
     background-color: #0a3d00;
     font-family: 'Lexend Deca', sans-serif;
+    width: 100%;
 }
 
 .navbar-brand, .navbar-nav .nav-link {
@@ -25,12 +26,13 @@ const Styles = styled.div`
 .dropdown-content {
     background-color: #0a3d00;
 }
+
 }
 `;
 
 export const NavBar = () => (
     <Styles>
-        <Navbar expand="lg">
+        <Navbar sticky="top" expand="lg">
             <Navbar.Brand href="/">Nelson Adventures</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
@@ -40,7 +42,10 @@ export const NavBar = () => (
                     <Nav.Item><Nav.Link eventKey="disablesd" disabled>Map</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Planner/Planner">Planner</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Events/Events">Events</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/TrailManager/TrailHome">Trail-Manager</Nav.Link></Nav.Item>                    
+                                  
+                </Nav>
+                <Nav pullRight>
+                <Nav.Item><Nav.Link href="/TrailManager/TrailHome">Trail-Manager</Nav.Link></Nav.Item>      
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

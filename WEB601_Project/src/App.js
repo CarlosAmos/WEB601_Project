@@ -15,13 +15,14 @@ import {Register} from './Pages/Register';
 
 import { Layout } from './Components/Layout';
 import { NavBar } from './Components/NavBar';
+import { Footer } from './Components/Footer';
 
 class App extends Component {
 
   render() {
     return (
       <React.Fragment>
-        <NavBar/>
+        <NavBar sticky="top"/>
         <Layout>
         <Router>
           <Switch>
@@ -38,10 +39,12 @@ class App extends Component {
             <Route path="/TrailManager/TrailPicker" component={TrailPicker} />
             <Route path="/TrailManager/AddTrails" component={AddTrails} />
             <Route path="/TrailManager/ManageTrails/:id" component={ManageTrails} />
-
           </Switch>
         </Router>
+        <br/>
+        <Footer/>
         </Layout>
+        
       </React.Fragment>
     );
   }

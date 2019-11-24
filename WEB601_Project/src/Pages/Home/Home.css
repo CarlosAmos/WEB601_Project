@@ -9,7 +9,13 @@ h2 {
     font-family: 'Lexend Deca', sans-serif;
 }
 
-
+#Footer {
+    background-color: #0a3d00;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+}
 
 #Container {
     background-color: white;
