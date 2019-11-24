@@ -8,9 +8,11 @@ export class ManageTrails extends Component {
         super(props);
         this.state = {
             loading: true,
-            Trails: [],                    
+            Trails: [],
+                              
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     componentDidMount() {
@@ -41,6 +43,15 @@ export class ManageTrails extends Component {
         console.log("Trail has been updated")
     }
 
+    handleInputChange(e){
+        let Trails = this.state.Trails
+        Trails[e.target.name] = e.target.value
+
+        this.setState({
+            Trails
+        })
+    }
+
     render() {
         if(this.state.isLoaded === true) {
             return(
@@ -49,7 +60,7 @@ export class ManageTrails extends Component {
         } 
 
         var { Trails } = this.state;
-
+// Insert refernces for the fields
         return(
             <div>          
                 <br/>      
@@ -65,19 +76,22 @@ export class ManageTrails extends Component {
                                 <Form id="Formbox" key={Trail.ID} onSubmit={this.handleSubmit}>                                
                                        
                                         <Form.Label>Name</Form.Label>
-                                    <InputGroup className="mb-3" value={Trail.Name} >
+                                    <InputGroup className="mb-3" >
                                         <InputGroup.Prepend>
                                         </InputGroup.Prepend>
                                         <FormControl
                                             value={Trail.Name}
+                                            
+                                            ref={(ref) => { this.Name = ref }}
                                             aria-label="Username"
                                             aria-describedby="basic-addon1"
+                                            onChange={this.handleInputChange}
                                         />
                                     </InputGroup>
 
                                     <Form.Label>Location</Form.Label>
                                     <Form.Group as={Col} controlId="formGridState">
-                                         <Form.Control as="select" value={Trail.Location}>
+                                         <Form.Control as="select" value={Trail.Location} onChange={this.handleInputChange} ref={(ref) => { this.Location = ref }}>
                                                 <option>Kahurangi National Park</option>  
                                                 <option>Cobb Valley</option>    
                                                 <option>Nelson Lakes National Park</option>                                   
@@ -88,12 +102,12 @@ export class ManageTrails extends Component {
                                     <InputGroup>
                                         <InputGroup.Prepend>
                                         </InputGroup.Prepend>
-                                        <FormControl as="textarea" aria-label="With textarea" value={Trail.Description}/>
+                                        <FormControl as="textarea" aria-label="With textarea" value={Trail.Description} onChange={this.handleInputChange} ref={(ref) => { this.Description = ref }}/>
                                     </InputGroup>
 
                                     <Form.Label>Difficulty</Form.Label>
                                     <Form.Group as={Col} controlId="formGridState">
-                                         <Form.Control as="select" value={Trail.Difficulty}>
+                                         <Form.Control as="select" value={Trail.Difficulty} onChange={this.handleInputChange} ref={(ref) => { this.Difficulty = ref }}>
                                                 <option>Very Easy</option>  
                                                 <option>Easy</option>    
                                                 <option>Medium</option>
@@ -108,6 +122,8 @@ export class ManageTrails extends Component {
                                         </InputGroup.Prepend>
                                         <FormControl
                                             value={Trail.Length}
+                                            onChange={this.handleInputChange}
+                                            ref={(ref) => { this.Length = ref }}
                                             aria-label="Username"
                                             aria-describedby="basic-addon1"
                                         />
