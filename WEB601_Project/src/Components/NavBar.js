@@ -34,7 +34,7 @@ export const NavBar = () => (
                 <Nav className="mr-auto">
                     <Nav.Item><Nav.Link href="/Home/Home">Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Trail/Trail">Trail</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/Map/Map">Map</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey="disablesd" disabled>Map</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Planner/Planner">Planner</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/Events/Events">Events</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/TrailManager/TrailHome">Trail-Manager</Nav.Link></Nav.Item>                    
