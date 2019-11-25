@@ -46,6 +46,7 @@ INSERT INTO tblEvents (Name, Location,Description,Length,Date)
 VALUES ('Nydia Time Trial','Nydia Saddle','A time trial to see who can complete the Nydia Saddle trail the fastest','6',18/11/2019),
 ('Super D - Round 3','Richmond','Round 3 of the Super D downhill mountain bike racing','3',14/11/2019);
 
+
 INSERT INTO tblTips (Description)
 VALUES ('Always check the weather before you start the trail'),('Wear appropiate footwear'),('Tell someone where you are going'),
 ('Bring enough food and water');
@@ -62,4 +63,9 @@ VALUES ('Arthur Summit Trail','Kahurangi National Park','Walking trail that begi
  way up the side of Mount Robert. Reaching the top provides a great view of Lake Rotoiti.','Medium','9','mtrobert'),
  ('Test Name','Test Location','Test Descrpiotn','Very Hard','9','Test');
 
+SELECT * FROM tblTrails;
+
+SELECT * FROM tblTips;
+
+SELECT * FROM tblEvents;
 

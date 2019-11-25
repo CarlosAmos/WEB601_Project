@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import { Container, Col, Row, Form,} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+// import {Link} from 'react-router-dom';
+import {Provider, connect} from 'react-redux';
 import Button from '@material-ui/core/Button';
 import './Login.css'
 
 import { userActions } from '../../_actions/User.Action';
 
-class Login extends React.Component {
+class Login extends Component {
     constructor(props) {
         super(props);
 
